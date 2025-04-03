@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Exploration-Driven Generative Interactive Environments">
+  <meta property="og:title" content="Exploration-Driven Generative Interactive Environments"/>
+  <meta property="og:description" content="Training multi-environment world model easily with the world model GenieRedux, RetroAct Environment Dataset and the AutoExplore Agent."/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/> -->
+
+
+  <meta name="twitter:title" content="Exploration-Driven Generative Interactive Environments">
+  <meta name="twitter:description" content="GenieRedux World Model, RetroAct Dataset and AutoExplore Agent">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="World models, environment simulation, agent exploration, environment dataset, retro game dataset, multi-environment world model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Exploration-Driven Generative Interactive Environments</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Exploration-Driven Generative Interactive Environments</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://insait.ai/nedko-savov/" target="_blank">Nedko Savov</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://insait.ai/naser-kazemi/" target="_blank">Naser Kazemi</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                  <a href="https://insait.ai/mohammadmahdi-ghahramani-2/" target="_blank">Mohammad Mahdi</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://insait.ai/dr-danda-paudel/" target="_blank">Danda Paudel</a><sup>1</sup>,</span>
+                    <span class="author-block">
+                  <a href="https://xiwang1212.github.io/homepage/" target="_blank">Xi Wang</a><sup>1,2,3</sup>,</span>
+                  <span class="author-block">
+                      <a href="https://insait.ai/prof-luc-van-gool/" target="_blank">Luc Van Gool</a><sup>1</sup>
+                    </span>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>INSAIT, Sofia University, <sup>2</sup> ETH Zurich, <sup>3</sup> TU Munich <br>CVPR 2025</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/insait-institute/GenieRedux" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <!-- <img src="static/images/title.gif" alt="Your GIF" height="300%"> -->
+      </div>
+      <video poster="" id="tree" controls height="100%"> 
+        <source src="static/videos/final_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        We present a framework for training multi-environment world models, equipped with our <b>RetroAct</b> dataset of annotated virtual environments, our open implementation of Genie - <b>GenieRedux</b>, and our novel environment exploration method - <b>AutoExplore Agent</b>.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Modern world models require costly and time-consuming collection of large video datasets with action demonstrations by people or by environment-specific agents. To simplify training, we focus on using many virtual environments for inexpensive, automatically collected interaction data. Genie, a recent multi-environment world model, demonstrates
+    simulation abilities of many environments with shared behavior. Unfortunately, training their model requires expensive demonstrations. Therefore, we propose a training framework merely using a random agent in virtual environments. While the model trained in this manner exhibits good controls, it is limited by the random exploration possibilities. To address this limitation, we propose AutoExplore Agent - an exploration agent that entirely relies on the uncertainty of the world model, delivering diverse data from which it can learn the best. Our agent is fully independent of environment-specific rewards and thus adapts easily to new environments. With this approach, the pretrained multi-environment model can quickly adapt to new environments achieving video fidelity and controllability improvement.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-4">Our Framework</h2>
+          <div class="content has-text-justified">
+            
+          <div class="has-text-centered">
+            
+            <img src="static/images/teaserv2.png" alt="Teaser" height="300%">
+            <!-- <img src="static/images/all_control.gif" alt="Your GIF" height="300%"> -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+</div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-4">Multi-Environment Control with GenieRedux-G</h2>
+          <div class="content has-text-justified">
+            <p>
+              We avoid the costly human demonstration and video curation usually needed for training multi-environment world models, by instead annotating the behavior and controls of hundreds of virtual environments - our RetroAct dataset. Each annotated environment can give us many action demonstrations without the need for extra labeling.
+            </p>
+            <p>
+              We train our GenieRedux-G model on interactions from many environments at once and, even with a random agent, the model learns to accurately execute the actions.
+            </p>
+            <p>
+              
+            </p>
+            
+          <div class="has-text-centered">
+            
+            <video poster="" id="tree" autoplay controls muted loop height="100%"> 
+              <source src="static/videos/Control.mp4"
+              type="video/mp4">
+            </video> 
+                <video poster="" id="tree" autoplay controls muted loop height="100%"> 
+                <source src="static/videos/Replication.mp4"
+                type="video/mp4">
+              </video> 
+            <!-- <img src="static/images/all_control.gif" alt="Your GIF" height="300%"> -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+</div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-4">Exploring Environments with AutoExplore Agent</h2>
+          <div class="content has-text-justified">
+            <p>
+              To replace the limited random agent, we design AutoExplore Agent - an exploration agent that navigates virtual environments only driven by a reward based on the uncertainty of our world model. AutoExplore Agent is independen of environment-specific reward and can be applied to any environment.
+            </p>
+            <p>
+              We demonstrate that the interaction data obtained from AutoExplore Agent is much more diverse than with a random agent.
+            </p>
+          <div class="has-text-centered">
+              
+              <video poster="" id="tree" autoplay controls muted loop height="100%"> 
+                <source src="static/videos/AutoExplore.mp4"
+                type="video/mp4">
+              </video> 
+            <!-- <img src="static/images/all_control.gif" alt="Your GIF" height="300%"> -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+</div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-4">Better Environment Simulation with AutoExplore Agent</h2>
+          <div class="content has-text-justified">
+            <p>
+              Finetuning our pretrained GenieRedux-G Model with the data from AutoExplore Agent leads to a better visual fidelity and controllability.
+            </p>
+          <div class="has-text-centered">
+              
+              <video poster="" id="tree" autoplay controls muted loop height="100%"> 
+                <source src="static/videos/AutoExplore Results.mp4"
+                type="video/mp4">
+              </video> 
+            <!-- <img src="static/images/all_control.gif" alt="Your GIF" height="300%"> -->
+          </div>
+
+
+          <div class="content has-text-justified">
+            <p>
+              Our framework combines diverse annotated environments with automatic exploration, and we have demonstrated that this approach achievs strong visual fidelity and controllability without relying on human demonstrations.
+            </p>
+          <div class="has-text-centered">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+</div>
+</section>
+
+<!-- 
+<section class="hero is-small">
+  <div class="hero-body">
+    
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-4">Our Framework</h2>
+          <div class="content has-text-justified">
+            <p>
+              Our framework improves multi-environment simulation by using filtering and exploration of virtual environments to cheaply and effectively obtain large amounts of exploration data. Using this data, we train our GenieRedux-G world model, adapted to virtual environments, to demonstrate the simulation abilities.
+            </p>
+          <div class="has-text-centered">
+              
+            <img src="static/images/teaser.png" alt="Framework" height="300%">
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+</div>
+</section> -->
+
+<!-- 
+<section class="hero is-small">
+  <div class="hero-body">
+    
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-4">Environment control with GenieRedux-G</h2>
+          <div class="content has-text-justified">
+            <p>
+              We base our models on Genie, a model that excels at learning to apply frame-by-frame motion control across visually diverse environments.
+              However, in contrast, our best model - GenieRedux-G-TA, is trained on data, generated by RL agent exploration, rather than a random agent or costly human demonstrations.
+              In addition, it is guided by the readily available agent's actions.
+            </p>
+            <p>
+              We demonstrate that GenieRedux-G-TA is able to represent all actions from the Coinrun case study environment, independent of visual appearance.
+            </p>
+            <p>
+              
+            </p>
+            
+          <div class="has-text-centered">
+            <img src="static/images/all_control.gif" alt="Your GIF" height="300%">
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+</div>
+</section> -->
+
+<!-- Image carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item"> -->
+        <!-- Your image here -->
+        <!-- <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div> -->
+      <!-- <div class="item">
+        Your image here -->
+        <!-- <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item"> -->
+        <!-- Your image here -->
+        <!-- <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
+     <div class="item"> -->
+      <!-- Your image here -->
+      <!-- <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section> -->
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container"> -->
+      <!-- Paper video. -->
+      <!-- <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video"> -->
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
