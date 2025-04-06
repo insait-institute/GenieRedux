@@ -465,7 +465,7 @@ class Trainer(nn.Module):
 
             # Compute loss with automatic mixed precision
             with conditional_with(
-                self.accelerator.no_sync(self.model), self.grad_accum_every != i - 1
+                self.accelerator.no_sync(self.model), self.grad_accum_every != i + 1
             ):
                 with self.accelerator.autocast():
                     loss = self.model(
