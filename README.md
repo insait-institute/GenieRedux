@@ -291,7 +291,7 @@ There are two evaluation modes:
 ./run.sh --config=genie_redux.yaml --mode=eval --eval.action_to_take=1 --eval.model_path=<path_to_model> --eval.inference_method=one_go
 ```
 
-The above command will evaluate the model at the specified path using the action at index `1`, which corresponds to the `RIGHT` action in the `CoinRun` dataset. You can see the visualizations of the model's predictions in the `./outputs/evaluation/<model-name>/<dataset>/`, dirctory, which is default path for the evaluation results.
+The above command will evaluate the model at the specified path using the action at index `1`, which corresponds to the `RIGHT` action in the `CoinRun` dataset. You can see the visualizations of the model's predictions in the `./outputs/evaluation/<model-name>/<dataset>/`, directory, which is default path for the evaluation results.
 
 ## Project Structure
 
